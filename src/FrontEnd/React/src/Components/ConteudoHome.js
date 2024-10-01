@@ -123,7 +123,7 @@ const ContainerFerramentas = styled.div`
   height: auto;
   background-color: #16a8ab;
   display: flex;
-  margin-top: 45vh;
+  margin-top: 40.6vh;
   padding: 0;
 
   flex-direction: column;
@@ -147,7 +147,7 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
-  margin-top: 50px;
+  margin-top: 90px;
   padding: 0 5%;
 
   @media (max-width: 768px) {
@@ -224,7 +224,9 @@ const ContainerContato = styled.div`
     padding: 0;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 0;
+    height: auto;
+    min-height: auto;
+ 
 `
 
 const WaveEsquerda = styled.div`
@@ -232,8 +234,8 @@ const WaveEsquerda = styled.div`
     left: 0; 
     z-index: -1;
     width: auto;
-    max-width: 56vh;
-    height: 94vh;
+    max-width: 59vh;
+    height: 100vh;
     overflow: hidden;
     @media (max-width: 768px) {
         display: none;
@@ -253,7 +255,7 @@ const WaveImgE = styled.img`
 `;
 
 const FormContainer = styled.div`
-    margin-top: 10vh;
+    margin-top: 5vh;
     margin-left: auto;
     margin-right: auto;
     padding: 40px;

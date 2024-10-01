@@ -3,12 +3,13 @@ import styled from 'styled-components'
 
 const FooterContainer = styled.footer`
    background: linear-gradient(90deg, rgba(243, 138, 97, 1) 0%, rgba(242, 81, 87, 1) 100%);
-    padding: 1em;
+    padding: 1.3em;
     z-index: 1;
     color: #fff;
     text-align:center;
     position: relative;
-    margin: 0;
+    margin-top: -10px;
+
     font-family: 'Neurial Grotesk';
     
    
