@@ -26,6 +26,9 @@ Além disso, oferece um espaço para o desenvolvimento pessoal e profissional, a
 Entre as ferramentas oferecidas estão espaços de Mentorias, Networking e Capacitações em áreas como Empreendedorismo, Liderança e habilidades interpessoais. Junte-se a nós para fazer parte da Geração Z de Impacto!
 </h3>
 
+## Figma
+https://www.figma.com/design/69CsDjdOyNBIK4KzPVLzyd/Prot%C3%B3tipo-Gera%C3%A7%C3%A3o-Impacto?node-id=0-1&t=JPCsqnaUn5bkNIZm-1
+
 ## 🛠 Estrutura de pastas
 
 -Projeto2<br>
