@@ -1,23 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
-
 
 const ContainerFerramentas = styled.div`
   width: 100%;
-  height: 700px;
+  height: auto;
   background-color: #16a8ab;
   display: flex;
-  margin-top: 37.2vh;
+  margin-top: 40.6vh;
+  padding: 0;
   flex-direction: column;
-  font-family: 'FrankFurter';   
+  font-family: 'Neurial Grotesk';   
 `;
-
 
 const TituloFerramentas = styled.h2`
   margin-left: 50px;
 `;
 
 const TextoContainer = styled.p`
+  font-family: 'Neurial Grotesk';
   margin-left: 30px;
   font-size: 1.9rem;
 `;
@@ -27,21 +28,25 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
-  margin-top: 50px;
+  margin-top: 90px;
   padding: 0 5%;
+  
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 const Card = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
-  margin-top: 50px;
+  align-items: center; // Centraliza os itens no cartão
+  margin-top: 20px; // Diminui o espaço entre cartões
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  width: 300px;
+  width: 280px;
   text-align: center;
   padding: 20px;
   transition: transform 0.3s ease;
@@ -49,21 +54,23 @@ const Card = styled.div`
   &:hover {
     transform: translateY(-10px);
   }
-`;
 
+  @media (max-width: 480px) {
+    width: 100%;
+    margin: 10px;
+  }
+`;
 
 const CardImg = styled.img`
   max-width: 100%;
   border-radius: 10px;
 `;
 
-
 const CardTitulo = styled.h3`
-  font-family: 'FrankFurter';
+  font-family: 'Neurial Grotesk';
   color: #fa7343;
   margin: 20px 0 10px 0;
 `;
-
 
 const CardTexto = styled.p`
   font-family: 'Neurial Grotesk';
@@ -72,8 +79,9 @@ const CardTexto = styled.p`
 `;
 
 function Ferramentas() {
+ 
   return (
-    <ContainerFerramentas>
+    <ContainerFerramentas id="ferramentas-section">
       <TituloFerramentas>Nossas Ferramentas</TituloFerramentas>
       <TextoContainer>
         Descubra recursos para seu desenvolvimento e conexão.

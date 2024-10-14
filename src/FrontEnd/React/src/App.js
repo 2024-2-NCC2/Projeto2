@@ -2,8 +2,10 @@ import GlobalStyles from './styles/GlobalStyles'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Sobre from './pages/Sobre';
-import Ferramentas from './pages/Ferramentas';
 import Contato from './pages/Contato';
+import Mentoria from './pages/Mentoria';
+import Cursos from './pages/Cursos';
+import Networking from './pages/Networking';
 
 
 function App() {
@@ -13,8 +15,10 @@ function App() {
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path='/sobre' element={<Sobre/>}/>
-    <Route path='/ferramentas' element={<Ferramentas/>}/>
     <Route path='/contato' element={<Contato/>}/>
+    <Route path='/cursos' element={<Cursos/>}/>
+    <Route path='/networking' element={<Networking/>}/>
+    <Route path='/mentoria' element={<Mentoria/>}/>
   </Routes>
 </Router>
   );

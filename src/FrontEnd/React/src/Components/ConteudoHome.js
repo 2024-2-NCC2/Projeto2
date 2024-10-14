@@ -4,6 +4,7 @@ import Mentoria from '../assets/mentoria.png'
 import Curso from '../assets/cursos.jpg'
 import Networking from '../assets/networking.jpg'
 import OndaInferior from '../assets/onda-Inferior.svg'
+import { Link } from 'react-router-dom';
  
 const HeaderGeracao = styled.header`
     font-family: 'Neurial Grotesk';
@@ -95,7 +96,7 @@ const WaveDireita = styled.div`
     right: 0; 
     z-index: -1;
     width: auto;
-    max-width: 75vh;
+    max-width: 76vh;
     height: 140vh; 
     overflow: hidden;
     pointer-events: none;
@@ -149,6 +150,9 @@ const CardContainer = styled.div`
   align-items: flex-start;
   margin-top: 90px;
   padding: 0 5%;
+  #ferramentas-section{
+  
+}
 
   @media (max-width: 768px) {
     justify-content: center;
@@ -159,6 +163,11 @@ const CardContainer = styled.div`
   padding: 0 2%;
 }
 
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none; 
+  color: inherit; 
 `;
 
 
@@ -357,7 +366,8 @@ function ConteudoHome(){
         Descubra recursos para seu desenvolvimento e conexão.
       </TextoContainer>
 
-      <CardContainer>
+      <CardContainer id='ferramentas-section'>
+        <StyledLink to="/mentoria">
         <Card>
           <CardImg src={Mentoria} alt="Programa de Mentoria" />
           <CardTitulo>Programa de Mentoria &gt;</CardTitulo>
@@ -365,6 +375,8 @@ function ConteudoHome(){
             Conecte-se com profissionais de sucesso e compartilhe conhecimentos.
           </CardTexto>
         </Card>
+        </StyledLink>
+        <StyledLink to="/networking">
         <Card>
           <CardImg src={Networking} alt="Plataforma de Networking" />
           <CardTitulo>Plataforma de Networking &gt;</CardTitulo>
@@ -372,6 +384,8 @@ function ConteudoHome(){
             Conecte-se e compartilhe experiências valiosas com colegas.
           </CardTexto>
         </Card>
+        </StyledLink>
+        <StyledLink to="/cursos">
         <Card>
           <CardImg src={Curso} alt="Cursos Online & Webinar" />
           <CardTitulo>Cursos Online & Webinar &gt;</CardTitulo>
@@ -380,13 +394,14 @@ function ConteudoHome(){
             gratuitos e impulsione suas habilidades.
           </CardTexto>
         </Card>
+        </StyledLink>
       </CardContainer>
     </ContainerFerramentas>
     <ContainerContato>
             <WaveEsquerda>
                 <WaveImgE src={OndaInferior} alt="Onda inferior" />
             </WaveEsquerda>
-            <FormContainer>
+            <FormContainer id='contatos-section'>
                 <FormTitle>Fale Conosco</FormTitle>
                 <form>
                     <FormLabel htmlFor="name">Nome <RequiredSpan>*</RequiredSpan></FormLabel>

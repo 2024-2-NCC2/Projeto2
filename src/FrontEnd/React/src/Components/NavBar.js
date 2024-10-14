@@ -50,7 +50,8 @@ const Menu = styled(Link)`
     cursor: pointer;
 
     &:hover {
-        text-decoration: underline;
+        text-decoration: none;
+         color: #F4D7D7;
     }
 
     @media (max-width: 768px) {
@@ -65,6 +66,21 @@ function NavBar() {
         setMenuOpen(!menuOpen);
     };
 
+    const scrollToFerramentas = () => {
+        const section = document.getElementById('ferramentas-section');
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+      
+      const scrollToContato = () => {
+        const section = document.getElementById('contatos-section');
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+      
+
     return (
         <NavBarContainer>
             <MenuToggle aria-label="Abrir Menu" onClick={toggleMenu}>
@@ -73,8 +89,8 @@ function NavBar() {
             <NavLinks show={menuOpen}>
                 <li><Menu to="/">Home</Menu></li>
                 <li><Menu to="/sobre">Sobre</Menu></li>
-                <li><Menu to="/ferramentas">Ferramentas</Menu></li>
-                <li><Menu to="/contato">Contato</Menu></li>
+                <li id="ferramentas-btn"><Menu as="p" onClick={scrollToFerramentas}>Ferramentas</Menu></li>
+                <li><Menu as="p" onClick={scrollToContato}>Contato</Menu></li>
             </NavLinks>
         </NavBarContainer>
     );
