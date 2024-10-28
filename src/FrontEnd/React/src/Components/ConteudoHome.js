@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom';
  
 const HeaderGeracao = styled.header`
     font-family: 'Neurial Grotesk';
+    animation-name: aparecimento;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
     
     color: #000; 
     text-align: left;
@@ -26,14 +30,23 @@ const HeaderGeracao = styled.header`
     align-items: center;
   }
 
+
   @media (max-width: 320px) {
   min-height: 55vh;
   padding: 10px;
 }
-
+@keyframes aparecimento {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
    
 
 `
+
 const Headerh1 = styled.h1`
    font-size: 4.5rem;
    padding: 0px;

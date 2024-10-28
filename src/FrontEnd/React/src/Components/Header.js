@@ -4,14 +4,14 @@ import NavBar from './NavBar';
 import Logo from '../assets/Logo.png'
 
 const HeaderContainer = styled.header`
-font-size: 1.4rem;
+  font-size: 1.4rem;
   display:flex;
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(90deg, rgba(242, 81, 87, 1) 0%, rgba(243, 138, 97, 1) 100%);
   padding: 10px 40px;
   color: #fff;
-  font-weight:bold;
+  font-weight: bold;
 `;
 
 const LogoImage = styled.img`
@@ -24,8 +24,6 @@ function Header() {
     <HeaderContainer>
      <LogoImage src ={Logo} />  
       <NavBar />
-
-      
     </HeaderContainer>
     
   );
