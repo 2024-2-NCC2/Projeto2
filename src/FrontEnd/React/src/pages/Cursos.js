@@ -115,6 +115,7 @@ const BotaoNavegar = styled.button`
 
 function Cursos() {
   
+  
   const [index, setIndex] = useState(0);
 
   const cards = [

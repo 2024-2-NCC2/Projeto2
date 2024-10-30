@@ -6,6 +6,7 @@ import Contato from './pages/Contato';
 import Mentoria from './pages/Mentoria';
 import Cursos from './pages/Cursos';
 import Networking from './pages/Networking';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <Route path='/contato' element={<Contato/>}/>
     <Route path='/cursos' element={<Cursos/>}/>
     <Route path='/networking' element={<Networking/>}/>
+    <Route path='/profile' element={<Profile/>}/>
     <Route path='/mentoria' element={<Mentoria/>}/>
   </Routes>
 </Router>

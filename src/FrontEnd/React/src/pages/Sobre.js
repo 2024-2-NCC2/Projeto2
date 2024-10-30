@@ -145,33 +145,7 @@ const TeamSectionContainer = styled.div`
   margin-top: 50px;
 `;
 
-const GradientRectangle = styled.div`
-  background: linear-gradient(90deg, #FF6F61, #16A8AB);
-  padding: 20px;
-  width: 97.35%;
- 
-  height: 300px;
-  text-align: center;
-  margin: -330px auto 50px auto;
-  position: relative;
 
-  @media screen and (max-width: 1024px) {
-    height: 250px;
-  }
-
-  @media screen and (max-width: 768px) {
-    height: 200px;
-    padding: 15px;
-    width: 95%;
-    margin: -100px auto 40px auto;
-  }
-
-  @media screen and (max-width: 480px) {
-    height: 150px;
-    padding: 10px;
-    width: 90%;
-  }
-`;
 
 const TitleText = styled.h2`
   font-family: 'Neurial Grotesk';
@@ -211,7 +185,7 @@ const TeamGridTop = styled.div`
   display: flex;
   gap: 50px;
   justify-content: center; 
-  margin-top: -70px;
+  margin-top: -100px;
   z-index: 1;
   position: relative;
 
@@ -219,14 +193,43 @@ const TeamGridTop = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin-top: -30px;
+  
+  }
+`;
+const GradientRectangle = styled.div`
+  background: linear-gradient(90deg, #FF6F61, #16A8AB);
+  padding: 20px;
+  width: 97.35%;
+ 
+  height: 300px;
+  text-align: center;
+  margin: -30px auto 50px auto;
+  position: relative;
+
+  @media screen and (max-width: 1024px) {
+    height: 250px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 200px;
+    padding: 15px;
+    width: 93.8%;
+    margin: -10px auto 40px auto;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 150px;
+    padding: 10px;
+    width: 80%;
   }
 `;
 const TeamGridBottom = styled.div`
   display: flex;
   gap: 40px;
+  margin-top: 40px;
+  padding-bottom: 70px;
   justify-content: center; 
-  margin-top: 30px;
+  
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -308,8 +311,8 @@ function Sobre() {
     { name: "Guilherme Muniz", image: fotoIntegrante1, linkedin: "https://www.linkedin.com/in/guimuniiz/" },
     { name: "Maria Eduarda", image: fotoIntegrante2, linkedin: "https://www.linkedin.com/in/maria-eduarda-c-foloni/" },
     { name: "Arthur Paltrinieri", image: fotoIntegrante3, linkedin: "https://www.linkedin.com/in/arthur-paltrinieri/" },
-    { name: "Eduardo Chen", image: fotoIntegrante4, linkedin: "https://www.linkedin.com/in/usuario4" },
-    { name: "Fabiano Chou", image: fotoIntegrante5, linkedin: "https://www.linkedin.com/in/usuario5" },
+    { name: "Eduardo Chen", image: fotoIntegrante4, linkedin: "https://www.linkedin.com/in/eduardo-chen-zou-637443292/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
+    { name: "Fabiano Chou", image: fotoIntegrante5, linkedin: "https://www.linkedin.com/in/fabiano-chou-759b072b3/" },
   ];
 
   return (
@@ -339,7 +342,11 @@ function Sobre() {
         </Paragraph>
         <AnimacaoTexto />
       </TextContent>
-      
+
+      <GradientRectangle>
+          <TitleText>Quem faz o Geração Impacto?</TitleText>
+           <SubTitleText>Conheça a equipe por traz desse projeto</SubTitleText>
+        </GradientRectangle>
       <TeamSectionContainer>
         <TeamGridTop>
           {teamMembers.slice(0, 3).map((member, index) => (
@@ -353,10 +360,9 @@ function Sobre() {
           ))}
         </TeamGridTop>
 
-        <GradientRectangle>
-          <TitleText>Quem faz o Geração Impacto?</TitleText>
-           <SubTitleText>Conheça a equipe por traz desse projeto</SubTitleText>
-        </GradientRectangle>
+       
+         
+ 
 
         <TeamGridBottom>
           {teamMembers.slice(3, 5).map((member, index) => (

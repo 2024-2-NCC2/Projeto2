@@ -98,3 +98,100 @@ plt.tight_layout()
 
 # Exibir gráfico
 plt.show()
+
+"""# **Utilização Do Teorema de Taylor do 3 Grau**
+
+
+
+*   Através do Teorema de taylor Verificar uma projeção futura de taxa de desempregos
+*   Função de primeira ordem: **f(t)≈0.4632⋅t+22.5823**
+*  Função de segunda ordem: f(t)≈0.4632⋅t−0.8218⋅(t−5)
+2
+ +22.5823
+* Função de terceira ordem: f(t)≈0.4632⋅t−0.0731⋅(t−5)
+3
+ −0.8218⋅(t−5)
+2
+ +22.5823
+
+
+"""
+
+# Importar bibliotecas necessárias
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sympy import symbols, Function, diff, lambdify
+
+# Dados iniciais
+data = {
+    "Categorias": [
+        "Taxa de Desemprego Geral",
+        "Desemprego Jovens (18-24 anos)",
+        "Baixa Escolaridade (Sem Ensino Médio)",
+        "Alta Escolaridade (Ensino Superior)",
+        "Desemprego por Falta de Qualificação",
+        "Desemprego Regional (Norte/Nordeste)"
+    ],
+    "Taxa de Desemprego (%)": [
+        7.9, 22.8, 18.0, 5.0, 40.0, 20.0
+    ]
+}
+
+# Criar DataFrame
+df = pd.DataFrame(data)
+
+# Definir a variável de tempo (t) para análise futura e a função de desemprego
+t = symbols('t')
+de = Function('de')(t)
+
+# Aproximar a função usando um polinômio de grau 3
+times = np.arange(len(df))
+coeffs = np.polyfit(times, df["Taxa de Desemprego (%)"], 3)
+poly_expr = sum(coeffs[i] * t**(3-i) for i in range(4))
+
+# Expansão de Taylor de primeira ordem
+first_derivative = diff(poly_expr, t)
+t0 = times[-1]
+f_t0 = poly_expr.subs(t, t0)
+f_prime_t0 = first_derivative.subs(t, t0)
+taylor_expansion_1st = f_t0 + f_prime_t0 * (t - t0)
+de_lambda_1st = lambdify(t, taylor_expansion_1st, 'numpy')
+
+# Expansão de Taylor de segunda ordem
+second_derivative = diff(first_derivative, t)
+f_double_prime_t0 = second_derivative.subs(t, t0)
+taylor_expansion_2nd = f_t0 + f_prime_t0 * (t - t0) + f_double_prime_t0 * (t - t0)**2 / 2
+de_lambda_2nd = lambdify(t, taylor_expansion_2nd, 'numpy')
+
+# Expansão de Taylor de terceira ordem
+third_derivative = diff(second_derivative, t)
+f_triple_prime_t0 = third_derivative.subs(t, t0)
+taylor_expansion_3rd = (
+    f_t0 +
+    f_prime_t0 * (t - t0) +
+    f_double_prime_t0 * (t - t0)**2 / 2 +
+    f_triple_prime_t0 * (t - t0)**3 / 6
+)
+de_lambda_3rd = lambdify(t, taylor_expansion_3rd, 'numpy')
+
+# Projeções futuras para os próximos 5 períodos
+future_times = np.arange(len(df), len(df) + 5)
+projections_1st = de_lambda_1st(future_times)
+projections_2nd = de_lambda_2nd(future_times)
+projections_3rd = de_lambda_3rd(future_times)
+
+# Gráfico comparando as projeções de primeira, segunda e terceira ordens
+plt.figure(figsize=(10, 6))
+plt.plot(times, df["Taxa de Desemprego (%)"], label="Dados Atuais", marker='o')
+plt.plot(future_times, projections_1st, label="Projeção Futuro (Taylor 1ª Ordem)", linestyle='--', marker='x', color='orange')
+plt.plot(future_times, projections_2nd, label="Projeção Futuro (Taylor 2ª Ordem)", linestyle='--', marker='^', color='green')
+plt.plot(future_times, projections_3rd, label="Projeção Futuro (Taylor 3ª Ordem)", linestyle='--', marker='s', color='purple')
+plt.xlabel("Tempo (índice)")
+plt.ylabel("Taxa de Desemprego (%)")
+plt.title("Comparação de Projeções da Taxa de Desemprego (Taylor 1ª, 2ª e 3ª Ordem)")
+plt.legend()
+plt.grid()
+plt.xticks(np.concatenate([times, future_times]), rotation=45)
+plt.tight_layout()
+plt.show()

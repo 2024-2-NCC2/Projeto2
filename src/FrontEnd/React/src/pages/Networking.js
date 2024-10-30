@@ -161,14 +161,17 @@ const ProfilePic = styled.img`
 
 const ProfileName = styled.h2`
   margin: 0;
+  font-family: 'Neurial Grotesk';
+  font-weight: bolder;
   font-size: 1.5rem;
   z-index: 1;
 `;
 
 const ProfileInfo = styled.p`
   position: relative;
-  margin: 0;
+  margin: 1;
   font-size: 1.2rem;
+  font-family: 'Neurial Grotesk';
   z-index: 1;
 `;
 
@@ -238,6 +241,19 @@ const PostActions = styled.div`
   }
 `;
 
+  
+  const NomeUsuarioPost = styled.h3`
+  font-family: 'Neurial Grotesk';
+  font-size: 1.2rem;
+  font-weight: bolder;
+  `
+ 
+  const Descricaopost = styled.p`
+   font-family: 'Neurial Grotesk';
+  font-size: 1.1rem;
+  font-weight: bolder;
+  `
+
 function Networking() {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -259,8 +275,8 @@ function Networking() {
           />
           <input type="text" placeholder="Faça uma publicação" />
           <DropdownMenu isOpen={isMenuOpen}>
-            <a href="/profile">Visualizar seu perfil</a>
-            <a href="/connections">Ver suas conexões</a>
+            <a href="/Profile">Visualizar seu perfil</a>
+            <a href="/">Ver suas conexões</a>
           </DropdownMenu>
         </SearchBar>
 
@@ -269,10 +285,10 @@ function Networking() {
             <Post>
               <PostHeader>
                 <PostProfilePic src={PedroOliveira} alt="Felix Alexandre" />
-                <h3>Felix Alexandre</h3>
+                <NomeUsuarioPost>Felix Alexandre</NomeUsuarioPost>
               </PostHeader>
               <PostImage src={postImage} alt="Post Image" />
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
+              <Descricaopost>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</Descricaopost>
               <PostActions>
                 <img src={likeIcon} alt="Curtir" />
                 <img src={commentIcon} alt="Comentar" />
@@ -283,10 +299,10 @@ function Networking() {
             <Post>
               <PostHeader>
                 <PostProfilePic src={PedroOliveira} alt="Felix Alexandre" />
-                <h3>Felix Alexandre</h3>
+                <NomeUsuarioPost>Felix Alexandre</NomeUsuarioPost>
               </PostHeader>
               <PostImage src={postImage} alt="Post Image" />
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
+              <Descricaopost>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</Descricaopost>
               <PostActions>
                 <img src={likeIcon} alt="Curtir" />
                 <img src={commentIcon} alt="Comentar" />
@@ -297,10 +313,10 @@ function Networking() {
             <Post>
               <PostHeader>
                 <PostProfilePic src={PedroOliveira} alt="Felix Alexandre" />
-                <h3>Felix Alexandre</h3>
+                <NomeUsuarioPost>Felix Alexandre</NomeUsuarioPost>
               </PostHeader>
               <PostImage src={postImage} alt="Post Image" />
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
+              <Descricaopost>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</Descricaopost>
               <PostActions>
                 <img src={likeIcon} alt="Curtir" />
                 <img src={commentIcon} alt="Comentar" />
