@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from '../Components/Header';
 import Conteudo from "../Components/Conteudo";
@@ -114,8 +114,10 @@ const BotaoNavegar = styled.button`
 `;
 
 function Cursos() {
-  
-  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [index, setIndex] = useState(0);
 
   const cards = [

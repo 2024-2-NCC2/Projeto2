@@ -2,7 +2,7 @@ import Header from '../Components/Header';
 import Conteudo from "../Components/Conteudo";
 import Footer from '../Components/Footer';
 import banner from "../assets/FundoMentoria.svg";
-import React, { useState } from "react";
+import React, {  useEffect, useState } from "react";
 
 import Filtros from "../Components/Filtros";
 import ListaMentores from "../Components/ListaMentores";
@@ -21,6 +21,9 @@ import fotoJenifer from '../assets/fotoJenifer.jpg'
 import fotoEduardo from '../assets/fotoEduardo.jpg'
 import fotoJorge from '../assets/fotoJorge.avif'
 function Mentoria() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     const [filtroAtivo, setFiltroAtivo] = useState("Todos");
 
     const mentores = [

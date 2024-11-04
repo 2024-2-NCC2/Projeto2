@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+
 
 const NavBarContainer = styled.nav`
     font-family: 'FrankFurter';
@@ -61,38 +62,38 @@ const Menu = styled(Link)`
 
 function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
 
-    const scrollToFerramentas = () => {
-        const section = document.getElementById('ferramentas-section');
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const handleNavigation = (sectionId) => {
+        if (location.pathname !== '/') {
+
+            navigate('/', { state: { scrollTo: sectionId } });
+        } else {
+           
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
-      };
-      
-      const scrollToContato = () => {
-        const section = document.getElementById('contatos-section');
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      };
-      
+    };
 
     return (
         <NavBarContainer>
-            <MenuToggle aria-label="Abrir Menu" onClick={toggleMenu}>
-                &#9776; 
-            </MenuToggle>
-            <NavLinks show={menuOpen}>
-                <li><Menu to="/">Home</Menu></li>
-                <li><Menu to="/sobre">Sobre</Menu></li>
-                <li id="ferramentas-btn"><Menu as="p" onClick={scrollToFerramentas}>Ferramentas</Menu></li>
-                <li><Menu as="p" onClick={scrollToContato}>Contato</Menu></li>
-            </NavLinks>
-        </NavBarContainer>
+        <MenuToggle aria-label="Abrir Menu" onClick={toggleMenu}>
+            &#9776;
+        </MenuToggle>
+        <NavLinks show={menuOpen}>
+            <li><Menu to="/">Home</Menu></li>
+            <li><Menu to="/sobre">Sobre</Menu></li>
+            <li><Menu as="p" onClick={() => handleNavigation('ferramentas-section')}>Ferramentas</Menu></li>
+            <li><Menu as="p" onClick={() => handleNavigation('contatos-section')}>Contato</Menu></li>
+        </NavLinks>
+    </NavBarContainer>
     );
 }
 

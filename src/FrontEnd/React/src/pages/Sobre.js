@@ -109,7 +109,7 @@ const HighlightedTitle = styled.h2`
   color: #16A8AB;
   margin-right: 50px;
   font-family: 'Neurial Grotesk';
-  font-size: 2.3rem;
+  font-size: 2.0rem;
   margin-bottom: 10px;
 
   @media screen and (max-width: 768px) {
@@ -198,7 +198,7 @@ const TeamGridTop = styled.div`
 `;
 const GradientRectangle = styled.div`
   background: linear-gradient(90deg, #FF6F61, #16A8AB);
-  padding: 20px;
+  padding: 18px;
   width: 97.35%;
  
   height: 300px;

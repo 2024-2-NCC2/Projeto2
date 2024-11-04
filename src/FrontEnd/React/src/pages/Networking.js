@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
@@ -126,7 +126,7 @@ const ProfileCard = styled.div`
   text-align: center;
   border-radius: 8px;
   width: 100%;
-  height: 60vh;
+  height: 65vh;
   max-width: 300px;
   display: flex;
   flex-direction: column;
@@ -260,6 +260,9 @@ function Networking() {
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
 
   return (
     <div>
