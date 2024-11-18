@@ -19,7 +19,7 @@
 </p>
 
 <h3>
-  Geração Impacto é uma plataforma web dedicada à criação de uma rede de apoio e desenvolvimento para pessoas em situações vulneráveis. O projeto é fundamentado no ODS 10: Redução das Desigualdades. A plataforma permite que os usuários compartilhem suas experiências e relatem como superaram as situações de desigualdade.
+  Geração Impacto é uma plataforma web dedicada à criação de uma rede de apoio e desenvolvimento para pessoas em situações vulneráveis. O projeto é fundamentado na ODS 10: Redução das Desigualdades. A plataforma permite que os usuários compartilhem suas experiências e relatem como superaram as situações de desigualdade.
 
 Além disso, oferece um espaço para o desenvolvimento pessoal e profissional, ajudando a reduzir desigualdades e impulsionando o acesso a oportunidades no mercado de trabalho. A iniciativa busca equipar os indivíduos com habilidades que promovam sua autonomia e melhoria de vida.
 
@@ -35,14 +35,18 @@ https://www.figma.com/design/69CsDjdOyNBIK4KzPVLzyd/Prot%C3%B3tipo-Gera%C3%A7%C3
 |<br>
 |-->BD<br>
   &emsp;|-->Entrega 1 - Banco de dados.pdf<br>
-  &emsp;|-->entrega 2 bd.png<br>
+   &emsp;|-->entrega 2 bd.png<br>
+  &emsp;|--> Geraçao Impacto BD.sql<br>
+  &emsp;|--> TabelaFinalGeracaoImpacto<br>
 |-->CálculoII<br>
   &emsp;|-->CálculoII.py<br>
 |-->imgs<br>
 &emsp;|-->Logo Geração Impacto.png<br>
 |-->src<br>
-  &emsp;|-->Backend<br>
   &emsp;|-->Frontend<br>
+    &emsp;|-->HTML<br>
+      &emsp;|-->React<br>
+       &emsp;|-->BackEnd<br>
 |readme.md<br>
 
 
@@ -79,18 +83,28 @@ Com esses passos, você deve conseguir configurar e executar a Geração Impacto
 
 A cada atualização os detalhes devem ser lançados aqui.
 
-* 0.2.1 - 25/01/2022
-    * MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
-* 0.2.0 - 15/01/2022
-    * MUDANÇA: Remove `setDefaultXYZ()`
-    * ADD: Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * MUDANÇA: Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
+
+* 0.2.3 - 18/11/2024
+    * Adicionando o BackEnd do Projeto
+    * Ajustando o React
+    * Ataulizando o README
+* 0.2.2 - 04/11/2024
+    * Adicionando atualizações do React com useStates entre outras funcionalidades
+* 0.2.1 - 30/10/2024
+    * Adicionando a terceira entrega do projeto
+    * Adicionando a terceira entrega do banco de dados
+* 0.2.0 - 28/10/2024
+    * MUDANÇA: Atualização do projeto se adicionando interatividades 
+* 0.1.2 - 14/10/2024
+    * Atualização do React adicionando mais páginas e interações com JS
+* 0.1.1 - 02/10/2024
+    * Atualização do Readme
+* 0.1.0 - 01/10/2024
+    * Primeira Entrega do Banco de Dados
+    * Primeira Entrega do React do projeto em base do HTML e CSS 
+    * Atualização do Readme do projeto
+* 0.0.1 - 29/09/2024
+    * Primeira Entrega HTML e CSS
 
 ## 📋 Licença/License
 
