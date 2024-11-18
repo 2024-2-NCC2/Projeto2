@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from 'styled-components';
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
-
 const NavBarContainer = styled.nav`
     font-family: 'FrankFurter';
     display: flex;
@@ -70,9 +69,9 @@ function NavBar() {
     };
 
     const handleNavigation = (sectionId) => {
-        if (location.pathname !== '/') {
-
-            navigate('/', { state: { scrollTo: sectionId } });
+        if (location.pathname !== '/home') {
+         
+            navigate('/home', { state: { scrollTo: sectionId } });
         } else {
            
             const section = document.getElementById(sectionId);
@@ -84,16 +83,16 @@ function NavBar() {
 
     return (
         <NavBarContainer>
-        <MenuToggle aria-label="Abrir Menu" onClick={toggleMenu}>
-            &#9776;
-        </MenuToggle>
-        <NavLinks show={menuOpen}>
-            <li><Menu to="/">Home</Menu></li>
-            <li><Menu to="/sobre">Sobre</Menu></li>
-            <li><Menu as="p" onClick={() => handleNavigation('ferramentas-section')}>Ferramentas</Menu></li>
-            <li><Menu as="p" onClick={() => handleNavigation('contatos-section')}>Contato</Menu></li>
-        </NavLinks>
-    </NavBarContainer>
+            <MenuToggle aria-label="Abrir Menu" onClick={toggleMenu}>
+                &#9776;
+            </MenuToggle>
+            <NavLinks show={menuOpen}>
+                <li><Menu to="/home">Home</Menu></li>
+                <li><Menu to="/sobre">Sobre</Menu></li>
+                <li><Menu as="p" onClick={() => handleNavigation('ferramentas-section')}>Ferramentas</Menu></li>
+                <li><Menu as="p" onClick={() => handleNavigation('formulario-section')}>Contato</Menu></li>
+            </NavLinks>
+        </NavBarContainer>
     );
 }
 

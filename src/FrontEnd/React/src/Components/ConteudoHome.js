@@ -5,6 +5,8 @@ import Curso from '../assets/cursos.jpg'
 import Networking from '../assets/networking.jpg'
 import OndaInferior from '../assets/onda-Inferior.svg'
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import axios from 'axios';
  
 const HeaderGeracao = styled.header`
     font-family: 'Neurial Grotesk';
@@ -365,6 +367,36 @@ const ButtonContato = styled.button`
 `;
 
 function ConteudoHome(){
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [mensagem, setMensagem] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    console.log('Enviando dados:', { nome, email, mensagem });
+  
+    try {
+     
+      const response = await axios.post('http://localhost:3000/api/message', {
+        nome_FaleConosco: nome,
+        email_FaleConosco: email,
+        mensagem: mensagem,
+      });
+  
+      console.log('Resposta do servidor:', response.data);
+      setSuccess(response.data.message); 
+      setNome('');
+      setEmail('');
+      setMensagem('');
+    } catch (err) {
+      console.error('Erro ao enviar dados:', err);
+      setError('Erro ao enviar mensagem. Tente novamente.');
+    }
+  };
+
     return(
 
         <HeaderGeracao>
@@ -414,21 +446,45 @@ function ConteudoHome(){
             <WaveEsquerda>
                 <WaveImgE src={OndaInferior} alt="Onda inferior" />
             </WaveEsquerda>
-            <FormContainer id='contatos-section'>
-                <FormTitle>Fale Conosco</FormTitle>
-                <form>
-                    <FormLabel htmlFor="name">Nome <RequiredSpan>*</RequiredSpan></FormLabel>
-                    <FormInput type="text" id="name" name="name" required />
-                    
-                    <FormLabel htmlFor="email">E-mail <RequiredSpan>*</RequiredSpan></FormLabel>
-                    <FormInput type="email" id="email" name="email" required />
-                    
-                    <FormLabel htmlFor="message">Mensagem <RequiredSpan>*</RequiredSpan></FormLabel>
-                    <FormTextarea id="message" name="message" rows="5" required />
-                    
-                    <ButtonContato type="submit">Enviar</ButtonContato>
-                </form>
-            </FormContainer>
+            <FormContainer id="formulario-section">
+            <FormTitle>Fale Conosco</FormTitle>
+            <form onSubmit={handleSubmit}>
+                <FormLabel htmlFor="name">Nome <RequiredSpan>*</RequiredSpan></FormLabel>
+                <FormInput 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    value={nome}
+                    onChange={(e) => setNome(e.target.value)}
+                    required 
+                />
+
+                <FormLabel htmlFor="email">E-mail <RequiredSpan>*</RequiredSpan></FormLabel>
+                <FormInput 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required 
+                />
+
+                <FormLabel htmlFor="message">Mensagem <RequiredSpan>*</RequiredSpan></FormLabel>
+                <FormTextarea 
+                    id="message" 
+                    name="message" 
+                    rows="5" 
+                    value={mensagem}
+                    onChange={(e) => setMensagem(e.target.value)}
+                    required 
+                />
+                
+                <ButtonContato type="submit">Enviar</ButtonContato>
+
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {success && <p style={{ color: 'green' }}>{success}</p>}
+            </form>
+        </FormContainer>
         </ContainerContato>
         </HeaderGeracao>
 

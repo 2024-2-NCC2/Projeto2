@@ -8,10 +8,10 @@ import linkedinIcon from '../assets/linkedin.svg';
 import AnimacaoTexto from "../Components/AnimacaoTexto";
 
 import fotoIntegrante1 from '../assets/muniz.jpeg';
-import fotoIntegrante2 from '../assets/muniz.jpeg';
-import fotoIntegrante3 from '../assets/muniz.jpeg';
-import fotoIntegrante4 from '../assets/muniz.jpeg';
-import fotoIntegrante5 from '../assets/muniz.jpeg';
+import fotoIntegrante2 from '../assets/duda.jpg';
+import fotoIntegrante3 from '../assets/arthur.jpg';
+import fotoIntegrante4 from '../assets/edu.jpg';
+import fotoIntegrante5 from '../assets/fabi.jpg';
 
 const ConteudoBanner = styled.div`
   position: relative;

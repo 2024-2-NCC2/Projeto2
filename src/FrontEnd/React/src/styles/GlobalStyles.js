@@ -28,6 +28,8 @@ ul, li{
 
 }
 
+
 `
+
 
 export default GlobalStyles

@@ -40,8 +40,8 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center; // Centraliza os itens no cartão
-  margin-top: 20px; // Diminui o espaço entre cartões
+  align-items: center; 
+  margin-top: 20px; 
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

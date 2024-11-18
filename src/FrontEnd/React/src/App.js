@@ -7,6 +7,9 @@ import Mentoria from './pages/Mentoria';
 import Cursos from './pages/Cursos';
 import Networking from './pages/Networking';
 import Profile from './pages/Profile';
+import Login from './pages/Login';
+import Cadastro from './pages/Cadastro';
+
 
 
 function App() {
@@ -14,7 +17,9 @@ function App() {
 <Router>
   <GlobalStyles />
   <Routes>
-    <Route path="/" element={<Home />} />
+    <Route path="/home" element={<Home />} />
+    <Route path="/" element={<Login />} />
+    <Route path="/cadastro" element={<Cadastro />} />
     <Route path='/sobre' element={<Sobre/>}/>
     <Route path='/contato' element={<Contato/>}/>
     <Route path='/cursos' element={<Cursos/>}/>
